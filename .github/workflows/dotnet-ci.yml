@@ -1,0 +1,36 @@
+name: .NET Continuous Integration
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 22 * * *'
+
+jobs:
+  main:
+    if: ${{ github.triggering_actor != 'dependabot[bot]' }}
+
+    runs-on: ubuntu-latest
+
+    env:
+      DOTNET_NOLOGO: 1
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+      NUGET_PACKAGES: ${{ github.workspace }}/.github/nuget-packages
+
+    steps:
+      - name: Fetch Sources
+        uses: actions/checkout@v2
+
+      - name: Perform Common Steps
+        uses: ./.github/workflows/common
+
+      - name: Build Solution
+        shell: bash
+        run: dotnet build Core
+
+      - name: Run Unit Tests
+        shell: bash
+        run: dotnet test Core
