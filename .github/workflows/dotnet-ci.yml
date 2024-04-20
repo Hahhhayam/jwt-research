@@ -1,4 +1,4 @@
-name: Run Build and Unit tests
+name: .NET Continuous Integration
 
 on:
   push:
@@ -29,8 +29,8 @@ jobs:
 
       - name: Build Solution
         shell: bash
-        run: dotnet build
+        run: dotnet build Core
 
       - name: Run Unit Tests
         shell: bash
-        run: dotnet test
+        run: dotnet test Core
