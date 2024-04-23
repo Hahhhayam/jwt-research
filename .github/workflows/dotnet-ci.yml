@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Fetch Sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Perform Common Steps
         uses: ./.github/workflows/common
