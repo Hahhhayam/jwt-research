@@ -15,10 +15,11 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     assignees:
       - "hahhhayam"
     pull-request-branch-name:
       separator: "-"
     reviewers:
       - "hahhhayam"
+      - "Sqvlen" 

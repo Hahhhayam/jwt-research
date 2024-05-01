@@ -29,8 +29,11 @@ jobs:
 
       - name: Build Solution
         shell: bash
-        run: dotnet build Core
+        run: dotnet build
 
       - name: Run Unit Tests
         shell: bash
-        run: dotnet test Core
+        run: dotnet test
+
+      - name: SonarCloud Common Steps
+        uses: ./.github/workflows/sonar-cloud
