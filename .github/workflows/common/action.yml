@@ -14,7 +14,8 @@ runs:
             path: ${{ env.NUGET_PACKAGES }}
             key: ${{ runner.os }}.nuget.${{ hashFiles('**/*.csproj') }}
 
-      - name: Locate
+      - name: Locate dir
+        shell: bash
         run: pwd
 
       - name: Restore Nuget Packages
