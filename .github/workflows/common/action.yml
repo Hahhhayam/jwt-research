@@ -16,4 +16,4 @@ runs:
 
       - name: Restore Nuget Packages
         shell: bash
-        run: dotnet restore ../../jwt-research.sln
+        run: dotnet restore ./jwt-research.sln
