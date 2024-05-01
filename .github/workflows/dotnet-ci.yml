@@ -29,11 +29,11 @@ jobs:
 
       - name: Build Solution
         shell: bash
-        run: dotnet build jwt-research.sln
+        run: dotnet build
 
       - name: Run Unit Tests
         shell: bash
-        run: dotnet test jwt-research.sln
+        run: dotnet test
 
       - name: SonarCloud Common Steps
         uses: ./.github/workflows/sonar-cloud
