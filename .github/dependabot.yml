@@ -5,9 +5,10 @@ updates:
   - package-ecosystem: "nuget"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     assignees:
       - "hahhhayam"
+    open-pull-requests-limit: 10
     pull-request-branch-name:
       separator: "-"
     reviewers:
@@ -15,10 +16,11 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     assignees:
       - "hahhhayam"
     pull-request-branch-name:
       separator: "-"
+    open-pull-requests-limit: 10
     reviewers:
       - "hahhhayam"
